@@ -1,0 +1,100 @@
+{
+  "artifact_name": "CaseB_Reduced_Replay_Inspection_Artifact",
+  "artifact_type": "secondary_cross_domain_inspection_artifact",
+  "case_role": "Reduced secondary cross-domain replay observation, not a full three-tier replay-stability artifact comparable to Doc 834.",
+  "artifact_scope": {
+    "supports": [
+      "independent inspection of deposited Case B W1-W3 session-level extraction outputs",
+      "inspection of replay-session configuration",
+      "inspection of pairwise replay comparison records",
+      "review of author-observed Backbone Overlap and VOID Coverage ranges",
+      "review of domain-specific indicators for high-density economic statistical text"
+    ],
+    "does_not_support": [
+      "full three-tier replay-stability claim",
+      "Tier C high-perturbation evaluation",
+      "bit-level reproduction of upstream LLM extraction",
+      "independent regeneration of W1-W3 from the source document",
+      "full executable reproduction of the replay pipeline",
+      "automated JSONL parsing across all deposited outputs",
+      "automated alignment verification",
+      "statistical significance testing",
+      "semantic correctness evaluation",
+      "ground-truth validation",
+      "universal cross-domain generalization"
+    ]
+  },
+  "document": {
+    "doc_id": "Case B",
+    "document_title": "Statistical Communiqué of the People's Republic of China on the 2025 National Economic and Social Development",
+    "document_type": "economic statistical communiqué",
+    "source_language": "Chinese",
+    "role_in_paper": "Secondary cross-domain replay observation for Chapter 6 Section 6.9"
+  },
+  "language_note": {
+    "source_document_language": "Chinese",
+    "extraction_working_language": "Chinese",
+    "schema_language": "English field names and canonical runtime status flags",
+    "slot_content_language": "Chinese natural-language slot content may appear in MCU payload fields",
+    "comparison_basis": "Replay comparison is based on structural coordinates, MCU counts, canonical runtime flags, evidence references, indicator-chain coverage, Relay/VOID/Collision distributions, and author-observed structural-coordinate alignment, not on surface-language similarity."
+  },
+  "deposited_output_format": {
+    "format_type": "heterogeneous_session_level_deposited_outputs",
+    "strict_jsonl": false,
+    "description": "The deposited output files preserve the original extraction-output format for each session. They may contain human-readable checklist notes, indicator-chain notes, quota notes, or JSON-compatible records.",
+    "inspection_note": "These files are provided for human inspection of the deposited extraction outputs. They are not intended to be parsed uniformly as strict JSONL streams.",
+    "counting_note": "The reported MCU counts in this artifact are the author-recorded registered MCU counts used in Chapter 6 Section 6.9, not line counts of the deposited output files."
+  },
+  "protocol": {
+    "mcu_schema_reference": "Appendix C — MCU Projection Protocol v2.6",
+    "actual_extraction_procedure": "author-defined extraction procedure",
+    "actual_extraction_prompt_disclosure": "The exact author-defined extraction prompt is not included. This artifact supports independent inspection of deposited outputs and pairwise comparison records, not full upstream extraction reproduction.",
+    "runtime_schema": "MCU Typed IR",
+    "comparison_protocol": "Replay Routing Consistency observation protocol",
+    "boundary_note": "Appendix C provides the MCU schema, adapter-facing structural terminology, and replay consistency criteria. It is not the executable prompt used to generate the W1-W3 outputs."
+  },
+  "baseline": {
+    "reference_session": "W1",
+    "baseline_mcu_count": 40,
+    "baseline_role": "Reference topology baseline"
+  },
+  "sessions": [
+    {
+      "session_id": "W1",
+      "tier": "Tier A",
+      "temperature": 0.0,
+      "role": "Reference topology baseline",
+      "mcu_count": 40,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "caseB_W1_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false
+    },
+    {
+      "session_id": "W2",
+      "tier": "Tier A",
+      "temperature": 0.0,
+      "role": "Near-deterministic replay sample",
+      "mcu_count": 39,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "caseB_W2_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false
+    },
+    {
+      "session_id": "W3",
+      "tier": "Tier B",
+      "temperature": 0.5,
+      "role": "Moderate-perturbation observation sample",
+      "mcu_count": 45,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "caseB_W3_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false
+    }
+  ],
+  "inspection_boundary_note": "This package is a secondary inspection artifact, not a full executable reproduction pipeline and not a full three-tier replay-stability artifact. It supports inspection of the reduced Case B observation reported in Chapter 6 Section 6.9."
+}
