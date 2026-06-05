@@ -1,0 +1,167 @@
+{
+  "artifact_name": "Doc834_Replay_Inspection_Artifact",
+  "artifact_type": "minimal_inspection_artifact",
+  "artifact_scope": {
+    "supports": [
+      "independent inspection of deposited session-level extraction outputs",
+      "inspection of replay-session configuration",
+      "inspection of pairwise replay comparison records",
+      "review of author-observed Backbone Overlap and VOID Coverage ranges",
+      "review of operational metric definitions used in the Chapter 6 case-study replay observation"
+    ],
+    "does_not_support": [
+      "bit-level reproduction of upstream LLM extraction",
+      "independent regeneration of W1-W8 from the source document",
+      "full executable reproduction of the replay pipeline",
+      "automated JSONL parsing across all deposited outputs",
+      "automated alignment verification",
+      "statistical significance testing",
+      "semantic correctness evaluation",
+      "ground-truth validation"
+    ]
+  },
+  "document": {
+    "doc_id": "Doc 834",
+    "case": "United States v. Kwok",
+    "case_number": "1:23-cr-00118-AT",
+    "document_description": "Reply Sentencing Memorandum Submitted on Behalf of Miles Guo",
+    "role_in_paper": "Primary replay case study for Chapter 6 Section 6.8"
+  },
+  "language_note": {
+    "source_document_language": "English",
+    "extraction_working_language": "Chinese",
+    "schema_language": "English field names and canonical runtime status flags",
+    "slot_content_language": "Chinese natural-language slot content may appear in MCU payload fields",
+    "comparison_basis": "Replay comparison is based on structural coordinates, MCU counts, canonical runtime flags, evidence references, Relay/VOID/Collision distributions, and author-observed structural-coordinate alignment, not on surface-language similarity.",
+    "boundary_note": "The use of Chinese as the extraction working language does not imply translation-based semantic evaluation. It reflects the author's extraction workflow for producing MCU-compatible structural records under an English canonical schema."
+  },
+  "deposited_output_format": {
+    "format_type": "heterogeneous_session_level_deposited_outputs",
+    "strict_jsonl": false,
+    "description": "The deposited output files preserve the original extraction-output format for each session. Some sessions may contain a human-readable T/P5 checklist or quota notes before JSON-compatible records; other sessions may encode comparable T/P5 information inside JSON records.",
+    "inspection_note": "These files are provided for human inspection of the deposited extraction outputs. They are not intended to be parsed uniformly as strict JSONL streams.",
+    "counting_note": "The reported MCU counts in this artifact are the author-recorded registered MCU counts used in Chapter 6 Section 6.8, not line counts of the deposited output files."
+  },
+  "protocol": {
+    "mcu_schema_reference": "Appendix C — MCU Projection Protocol",
+    "actual_extraction_procedure": "author-defined extraction procedure",
+    "actual_extraction_prompt_disclosure": "The exact author-defined extraction prompt is not included. This artifact supports independent inspection of deposited outputs and pairwise comparison records, not full upstream extraction reproduction.",
+    "runtime_schema": "MCU Typed IR",
+    "comparison_protocol": "Replay Routing Consistency observation protocol",
+    "multi_round_extraction_note": "The manuscript reports a multi-round gap-checking procedure. Exact per-session review-round counts were not logged in this artifact; therefore the per-session field is marked as not_recorded.",
+    "boundary_note": "Appendix C provides the MCU schema, adapter-facing structural terminology, and replay consistency criteria. It is not the executable prompt used to generate the W1-W8 outputs."
+  },
+  "baseline": {
+    "reference_session": "W1",
+    "baseline_mcu_count": 26,
+    "baseline_role": "Reference topology baseline"
+  },
+  "sessions": [
+    {
+      "session_id": "W1",
+      "tier": "Tier A",
+      "temperature": 0.0,
+      "role": "Reference topology baseline",
+      "mcu_count": 26,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W1_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    },
+    {
+      "session_id": "W2",
+      "tier": "Tier A",
+      "temperature": 0.0,
+      "role": "Near-deterministic replay",
+      "mcu_count": 21,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W2_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    },
+    {
+      "session_id": "W3",
+      "tier": "Tier A",
+      "temperature": 0.0,
+      "role": "Near-deterministic replay with corrected MCU-0025 included",
+      "mcu_count": 25,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W3_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    },
+    {
+      "session_id": "W4",
+      "tier": "Tier B",
+      "temperature": 0.5,
+      "role": "Moderate perturbation replay",
+      "mcu_count": 22,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W4_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    },
+    {
+      "session_id": "W5",
+      "tier": "Tier B",
+      "temperature": 0.5,
+      "role": "Moderate perturbation replay",
+      "mcu_count": 24,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W5_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    },
+    {
+      "session_id": "W6",
+      "tier": "Tier C",
+      "temperature": 0.8,
+      "role": "High perturbation replay",
+      "mcu_count": 23,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W6_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    },
+    {
+      "session_id": "W7",
+      "tier": "Tier C",
+      "temperature": 0.8,
+      "role": "High perturbation replay",
+      "mcu_count": 21,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W7_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    },
+    {
+      "session_id": "W8",
+      "tier": "Tier C",
+      "temperature": 1.0,
+      "role": "Maximum perturbation replay",
+      "mcu_count": 22,
+      "review_rounds": "not_recorded",
+      "context_boundary_setting": "not_recorded",
+      "deposited_output_file": "doc834_W8_deposited_output.txt",
+      "output_format": "heterogeneous_deposited_output",
+      "strict_jsonl": false,
+      "format_note": "This deposited output file may include a human-readable T/P5 checklist, session-level notes, and JSON-compatible records. It is preserved for inspection and is not intended as a strict JSONL stream."
+    }
+  ],
+  "file_naming_note": "The artifact package uses normalized deposited-output filenames. Original working filenames may differ from the normalized artifact filenames.",
+  "inspection_boundary_note": "This package is an inspection artifact, not a full executable reproduction pipeline. It supports independent inspection of deposited outputs, session configuration, pairwise comparison records, and metric definitions. It does not claim bit-level reproduction of upstream LLM extraction or independent regeneration of W1-W8 from the source document."
+}
